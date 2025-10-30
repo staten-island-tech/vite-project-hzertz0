@@ -1,5 +1,42 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+}
+
+.light {
+  --primary: var(--white);
+  --secondary: var(--black);
+}
+
 .dark {
-    --mainBackground: black;
-    --secondBackground: white;
-    --textColor: black;
+  --primary: var(--black);
+  --secondary: var(--white);
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+.container {
+    margin: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    min-width: 350px;
+    max-width: 750px;
+    height: auto;
+    background-color: var(--primary);
+    font-size: 20px;
+    margin: 25px auto;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center ;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: var(--secondary)
 }
