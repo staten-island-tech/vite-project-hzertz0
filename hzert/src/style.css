@@ -1,6 +1,13 @@
+*{
+    font-family: "inter";
+}
+
 :root {
   --black: #000000;
   --white: #ffffff;
+    /* Intentions */
+  --primary: var(--white);
+  --secondary: var(--black);
 }
 
 .light {
@@ -14,7 +21,7 @@
 }
 
 body {
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .container {
@@ -30,13 +37,29 @@ body {
     min-width: 350px;
     max-width: 750px;
     height: auto;
-    background-color: var(--primary);
     font-size: 20px;
-    margin: 25px auto;
+    margin: 15px;
     border-radius: 10px;
     padding: 10px;
     text-align: center ;
     justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: var(--secondary)
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.site-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--secondary);
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 12px 20px;
+    border-radius: 15px;
+    margin: 20px;
+}                                
+
+.card img {
+  max-width: 500px;
+  height: auto;
 }
