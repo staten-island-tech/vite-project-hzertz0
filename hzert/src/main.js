@@ -4,6 +4,11 @@ const songs = [
     length: "2:00",
     image: "src/assets/us.png"
     },
+    {
+    name: "Daniel",
+    length: "1:00",
+    image: "src/assets/us.png"
+    }
 ]
 
 songs.forEach((song) => {
@@ -13,6 +18,7 @@ songs.forEach((song) => {
             <h2>${song.name}</h2>
             <img src="${song.image}" />
             <p>Length: ${song.length}</p>
+            <button class ="button" data-name="${song.name}"> Add to Queue</button>
         </div>`
   );
 });
