@@ -1,29 +1,25 @@
 const songs = [
     {
-    name: "Grayton",
-    length: "2:00",
-    image: "src/assets/us.png"
+    name: "Tetris Theme - Korobeiniki",
+    length: "1:24",
+    image: "src/assets/tetris.png"
     },
-    {
-    name: "Daniel",
-    length: "1:00",
-    image: "src/assets/us.png"
-    }
+    
 ]
 
 songs.forEach((song) => {
-  document.querySelector(".container").insertAdjacentHTML(
+  document.querySelector(".songcontainer").insertAdjacentHTML(
     "afterbegin",
     `<div class="card">
-            <h2>${song.name}</h2>
             <img src="${song.image}" />
+            <h2>${song.name}</h2>
             <p>Length: ${song.length}</p>
             <button class ="button" data-name="${song.name}"> Add to Queue</button>
-        </div>`
+    </div>`
   );
 });
 
-document.querySelector(".btn").addEventListener("click", function () {
+document.querySelector(".modebtn").addEventListener("click", function () {
   if (document.body.classList.contains("dark")) {
     document.body.classList.add("light");
     document.body.classList.remove("dark");
