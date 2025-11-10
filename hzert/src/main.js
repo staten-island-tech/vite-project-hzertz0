@@ -1,6 +1,6 @@
 const songs = [
     {
-    name: "Tetris Theme - Korobeiniki",
+    name: "Tetris Theme - Коробе́йники",
     length: "1:24",
     image: "src/assets/tetris.png"
     },
