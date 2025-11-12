@@ -29,6 +29,11 @@ const songs = [
     length: "2:23",
     image: "src/assets/america.png",
   },
+  {
+    name: "Undertale - Megalovania",
+    length: "2:36",
+    image: "src/assets/sans.png",
+  },
 ];
 
 songs.forEach((song) => {
@@ -52,3 +57,17 @@ document.querySelector(".modebtn").addEventListener("click", function () {
     document.body.classList.remove("light");
   }
 });
+
+const queue = [];
+document.querySelector(".button").addEventListener("click", function () {
+    const songname = click.target.dataset.name;
+    const song = songs.find((song) => song.name === songname);
+    if (song){
+      queue.push(song);
+    }
+})
+
+document.querySelector(".openbtn").addEventListener("click", function () {
+
+})
+
