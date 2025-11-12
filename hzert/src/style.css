@@ -35,19 +35,6 @@ body {
   justify-content: center;
 }
 
-.card {
-  min-width: 350px;
-  max-width: 750px;
-  height: auto;
-  font-size: 20px;
-  margin: 15px;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  justify-content: center;
-  border: 1px solid var(--secondary);
-  color: var(--secondary);
-}
 
 .site-header {
   display: flex;
@@ -61,12 +48,31 @@ body {
   margin: 20px;
 }
 
+
+.card {
+  position: relative;
+  width: 400px;
+  min-height: 300px;
+  font-size: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  padding-bottom: 60px;
+  text-align: center;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+}
+
 .card img {
-  max-width: 300px;
-  height: auto;
+  height: 300px;
+  width: auto;
 }
 
 .button {
+  position: absolute;
+  bottom: 10px; 
+  left: 50%;
+  transform: translateX(-50%); 
   background-color: var(--secondary);
   color: var(--primary);
   border: none;
@@ -75,7 +81,6 @@ body {
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 .modebtn,

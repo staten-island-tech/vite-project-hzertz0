@@ -1,11 +1,35 @@
 const songs = [
-    {
+  {
     name: "Tetris Theme - Коробе́йники",
     length: "1:24",
-    image: "src/assets/tetris.png"
-    },
-    
-]
+    image: "src/assets/tetris.png",
+  },
+  {
+    name: "All I Want For Christmas Is You",
+    length: "4:01",
+    image: "src/assets/christmas.png",
+  },
+  {
+    name: "Die with a Smile",
+    length: "4:12",
+    image: "src/assets/die.png",
+  },
+  {
+    name: "Sweden",
+    length: "3:36",
+    image: "src/assets/minecraft.png",
+  },
+  {
+    name: "Never Gonna Give You Up",
+    length: "3:32",
+    image: "src/assets/rick.png",
+  },
+  {
+    name: "U.S. National Anthem",
+    length: "2:23",
+    image: "src/assets/america.png",
+  },
+];
 
 songs.forEach((song) => {
   document.querySelector(".songcontainer").insertAdjacentHTML(
