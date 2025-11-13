@@ -5,6 +5,11 @@ const songs = [
     image: "src/assets/tetris.png",
   },
   {
+    name: "Imagine Dragon - Enemy",
+    length: "3:34",
+    image: "src/assets/enemy.png",
+  },
+  {
     name: "All I Want For Christmas Is You",
     length: "4:01",
     image: "src/assets/christmas.png",
@@ -34,6 +39,11 @@ const songs = [
     length: "2:36",
     image: "src/assets/sans.png",
   },
+  {
+    name: "ROSE & Bruno Mars - APT",
+    length: "2:54",
+    image: "src/assets/apt.png",
+  },
 ];
 
 songs.forEach((song) => {
@@ -59,15 +69,27 @@ document.querySelector(".modebtn").addEventListener("click", function () {
 });
 
 const queue = [];
-document.querySelector(".button").addEventListener("click", function () {
+document.addEventListener("click", function (click) {
+  if (click.target.classList.contains("button")) {
     const songname = click.target.dataset.name;
     const song = songs.find((song) => song.name === songname);
-    if (song){
+    const alreadyInQueue = queue.some(
+      (queuedSong) => queuedSong.name === songname
+    );
+
+    if (song && !alreadyInQueue) {
       queue.push(song);
+      document
+        .querySelector(".songs")
+        .insertAdjacentHTML(
+          "afterbegin",
+          `<p>${song.name} - ${song.length} Minutes</p>`
+        );
     }
-})
+  }
+});
 
 document.querySelector(".openbtn").addEventListener("click", function () {
-
-})
-
+  const panel = document.querySelector(".panel");
+  panel.classList.toggle("open");
+});
