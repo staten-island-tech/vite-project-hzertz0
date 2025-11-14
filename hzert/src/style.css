@@ -48,7 +48,6 @@ body {
   margin: 20px;
 }
 
-
 .card {
   position: relative;
   width: 400px;
@@ -97,11 +96,11 @@ body {
 }
 
 .openbtn {
-  background-color: var(--secondary);
-  color: var(--primary);
+  border: 1px solid var(--secondary);
+  background-color: var(--primary);
+  color: var(--secondary);
   max-width: 120px;
   position: fixed;
-  border: none;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 500;

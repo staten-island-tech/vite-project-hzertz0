@@ -1,48 +1,99 @@
 const songs = [
   {
-    name: "Tetris Theme - Коробе́йники",
+    name: "Tetris Theme",
+    artist: "Hirokazu Tanaka",
     length: "1:24",
     image: "src/assets/tetris.png",
   },
   {
-    name: "Imagine Dragon - Enemy",
+    name: "Enemy",
+    artist: "Imagine Dragon",
     length: "3:34",
     image: "src/assets/enemy.png",
   },
   {
     name: "All I Want For Christmas Is You",
+    artist: "Mariah Carey",
     length: "4:01",
     image: "src/assets/christmas.png",
   },
   {
     name: "Die with a Smile",
+    artist: "Lady Gaga & Bruno Mars",
     length: "4:12",
     image: "src/assets/die.png",
   },
   {
     name: "Sweden",
+    artist: "C418",
     length: "3:36",
     image: "src/assets/minecraft.png",
   },
   {
     name: "Never Gonna Give You Up",
+    artist: "Rick Astley",
     length: "3:32",
     image: "src/assets/rick.png",
   },
   {
-    name: "U.S. National Anthem",
+    name: "Star Spangled Banner",
+    artist: "Francis Scott Key",
     length: "2:23",
     image: "src/assets/america.png",
   },
   {
-    name: "Undertale - Megalovania",
-    length: "2:36",
-    image: "src/assets/sans.png",
-  },
-  {
-    name: "ROSE & Bruno Mars - APT",
+    name: "APT",
+    artist: "ROSE & Bruno Mars",
     length: "2:54",
     image: "src/assets/apt.png",
+  },
+  {
+    name: "bad guy",
+    artist: "Billie Eilish",
+    length: "3:14",
+    image: "src/assets/badguy.png",
+  },
+  {
+    name: "Blinding Lights",
+    artist: "The Weeknd",
+    length: "3:20",
+    image: "src/assets/blindinglight.png",
+  },
+  {
+    name: "Shape of You",
+    artist: "Ed Sheeran",
+    length: "3:53",
+    image: "src/assets/shapeofyou.png",
+  },
+  {
+    name: "Poker Face",
+    artist: "Lady Gaga",
+    length: "3:57",
+    image: "src/assets/pokerface.png",
+  },
+  {
+    name: "Billie Jean",
+    artist: "Michael Jackson",
+    length: "4:54",
+    image: "src/assets/billiejean.png",
+  },
+  {
+    name: "7 rings",
+    artist: "Ariana Grande",
+    length: "2:59",
+    image: "src/assets/7rings.png",
+  },
+  {
+    name: "Bohemian Rhapsody",
+    artist: "Queen",
+    length: "5:55",
+    image: "src/assets/bohemian.png",
+  },
+  {
+    name: "Happy",
+    artist: "Pharrell Williams",
+    length: "3:53",
+    image: "src/assets/happy.png",
   },
 ];
 
@@ -52,6 +103,7 @@ songs.forEach((song) => {
     `<div class="card">
             <img src="${song.image}" />
             <h2>${song.name}</h2>
+            <h3>${song.artist}</h3>
             <p>Length: ${song.length}</p>
             <button class ="button" data-name="${song.name}"> Add to Queue</button>
     </div>`
