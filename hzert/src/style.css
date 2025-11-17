@@ -26,7 +26,7 @@ body {
 }
 
 .songcontainer,
-.queuecontainer {
+.queuecontainer, .container {
   margin: 25px;
   margin-left: 25px;
   margin-right: 25px;
@@ -34,7 +34,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 
 .site-header {
   display: flex;
@@ -69,9 +68,9 @@ body {
 
 .button {
   position: absolute;
-  bottom: 10px; 
+  bottom: 10px;
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
   background-color: var(--secondary);
   color: var(--primary);
   border: none;
@@ -95,6 +94,20 @@ body {
   margin-top: 10px;
 }
 
+.filterbtn {
+  background-color: var(--secondary);
+  color: var(--primary);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  margin: 10px auto; 
+}
+
 .openbtn {
   border: 1px solid var(--secondary);
   background-color: var(--primary);
@@ -114,7 +127,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 0; 
+  width: 0;
   height: 100%;
   background-color: var(--secondary);
   color: var(--primary);
