@@ -91,13 +91,6 @@ const songs = [
     genre: "Pop",
   },
   {
-    name: "7 rings",
-    artist: "Ariana Grande",
-    length: "2:59",
-    image: "src/assets/7rings.png",
-    genre: "Pop",
-  },
-  {
     name: "Bohemian Rhapsody",
     artist: "Queen",
     length: "5:55",
@@ -111,18 +104,25 @@ const songs = [
     image: "src/assets/happy.png",
     genre: "Pop",
   },
+  {
+    name: "Somebody that I used to Know",
+    artist: "Gotye & Kimbra",
+    length: "4:04",
+    image: "src/assets/somebody.png",
+    genre: "Pop",
+  }
 ];
 
 songs.forEach((song) => {
   document.querySelector(".songcontainer").insertAdjacentHTML(
-    "afterbegin",
-    `<div class="card">
-            <img src="${song.image}" />
-            <h2>${song.name}</h2>
-            <h3>${song.artist}</h3>
-            <p>Length: ${song.length}</p>
-            <button class ="button" data-name="${song.name}"> Add to Queue</button>
-    </div>`
+  "afterbegin",
+  `<div class="card" data-genre="${song.genre}">
+      <img src="${song.image}" />
+      <h2>${song.name}</h2>
+      <h3>${song.artist}</h3>
+      <p>Length: ${song.length}</p>
+      <button class="button" data-name="${song.name}">Add to Queue</button>
+   </div>`
   );
 });
 
@@ -161,3 +161,18 @@ document.querySelector(".openbtn").addEventListener("click", function () {
   const panel = document.querySelector(".panel");
   panel.classList.toggle("open");
 });
+
+const filter = document.querySelectorAll(".filterbtn")
+filter.forEach((button) =>
+  button.addEventListener("click", function (event) {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      const songGenre = card.dataset.genre;
+      if (songGenre === event.target.textContent || event.target.textContent === "All") {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  })
+);
