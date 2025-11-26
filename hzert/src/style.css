@@ -123,6 +123,21 @@ body {
   bottom: 25px;
 }
 
+.addbtn {
+  border: 1px solid var(--primary);
+  background-color: var(--secondary);
+  color: var(--primary);
+  max-width: 120px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  left: 50px;
+  bottom: 50px;
+}
+
+
 .panel {
   position: fixed;
   top: 0;
