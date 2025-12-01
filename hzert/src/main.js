@@ -176,3 +176,7 @@ filter.forEach((button) =>
     });
   })
 );
+
+document.querySelector(".addbtn").addEventListener("click", function() {
+  console.log("hi")
+});
