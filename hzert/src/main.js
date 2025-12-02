@@ -178,5 +178,6 @@ filter.forEach((button) =>
 );
 
 document.querySelector(".addbtn").addEventListener("click", function() {
-  console.log("hi")
+  const songadd = document.querySelector(".songadd");
+  songadd.classList.toggle("open");
 });

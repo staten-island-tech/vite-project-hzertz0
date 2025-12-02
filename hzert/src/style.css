@@ -128,13 +128,14 @@ body {
   background-color: var(--secondary);
   color: var(--primary);
   max-width: 120px;
+  position: fixed;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
-  left: 50px;
-  bottom: 50px;
+  left: 25px;
+  bottom: 25px;
 }
 
 
@@ -155,3 +156,22 @@ body {
   width: 300px;
   padding: 20px;
 }
+
+.songadd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--secondary);
+  color: var(--primary);
+  overflow: hidden;
+  transition: width 0.4s ease;
+  box-sizing: border-box;
+}
+
+.songadd.open {
+  width: 500px;
+  padding: 20px;
+}
+
