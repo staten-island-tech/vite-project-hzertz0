@@ -181,3 +181,17 @@ document.querySelector(".addbtn").addEventListener("click", function() {
   const songadd = document.querySelector(".songadd");
   songadd.classList.toggle("open");
 });
+
+const imageUpload = document.getElementById("imageUpload");
+const imagePreview = document.getElementById("imagePreview");
+
+imageUpload.addEventListener("change", function () {
+  const file = imageUpload.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      imagePreview.style.backgroundImage = `url(${event.target.result})`;
+    };
+    reader.readAsDataURL(file);
+  }
+});
