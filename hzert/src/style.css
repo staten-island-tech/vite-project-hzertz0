@@ -82,7 +82,7 @@ body {
 }
 
 .modebtn,
-.queuebtn, .dftbtn {
+.queuebtn {
   background-color: var(--secondary);
   color: var(--primary);
   border: none;
@@ -184,4 +184,28 @@ body {
   border-radius: 10px;
   background-size: cover;
   background-position: center;
+}
+
+.inputbtn {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+/* Hide default file input */
+#imageUpload {
+  display: none;
+}
+
+/* Optional: Make text input look identical */
+#songName.inputbtn {
+  width: calc(100% - 40px); 
+  text-align: left;
 }

@@ -182,16 +182,19 @@ document.querySelector(".addbtn").addEventListener("click", function() {
   songadd.classList.toggle("open");
 });
 
-const imageUpload = document.getElementById("imageUpload");
-const imagePreview = document.getElementById("imagePreview");
+const imageUpload = document.querySelector("#imageUpload");
+const imagePreview = document.querySelector("#imagePreview");
 
 imageUpload.addEventListener("change", function () {
-  const file = imageUpload.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      imagePreview.style.backgroundImage = `url(${event.target.result})`;
-    };
-    reader.readAsDataURL(file);
-  }
+  const selectedFile = imageUpload.files[0];
+
+  if (!selectedFile) return;
+
+  const reader = new FileReader();
+
+  reader.addEventListener("load", function (event) {
+    imagePreview.style.backgroundImage = `url(${event.target.result})`;
+  });
+
+  reader.readAsDataURL(selectedFile);
 });
