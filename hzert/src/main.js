@@ -185,16 +185,10 @@ document.querySelector(".addbtn").addEventListener("click", function() {
 const imageUpload = document.querySelector("#imageUpload");
 const imagePreview = document.querySelector("#imagePreview");
 
-imageUpload.addEventListener("change", function () {
-  const selectedFile = imageUpload.files[0];
+imageUpload.addEventListener("input", function () {
+  const imageUrl = imageUpload.value.trim();
 
-  if (!selectedFile) return;
+  if (!imageUrl) return;
 
-  const reader = new FileReader();
-
-  reader.addEventListener("load", function (event) {
-    imagePreview.style.backgroundImage = `url(${event.target.result})`;
-  });
-
-  reader.readAsDataURL(selectedFile);
+  imagePreview.style.backgroundImage = `url(${imageUrl})`;
 });

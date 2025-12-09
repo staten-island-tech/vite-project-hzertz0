@@ -198,14 +198,3 @@ body {
   display: inline-block;
   margin: 10px 0;
 }
-
-/* Hide default file input */
-#imageUpload {
-  display: none;
-}
-
-/* Optional: Make text input look identical */
-#songName.inputbtn {
-  width: calc(100% - 40px); 
-  text-align: left;
-}
