@@ -110,13 +110,13 @@ const songs = [
     length: "4:04",
     image: "somebody.png",
     genre: "Pop",
-  }
+  },
 ];
 
 songs.forEach((song) => {
   document.querySelector(".songcontainer").insertAdjacentHTML(
-  "afterbegin",
-  `<div class="card" data-genre="${song.genre}">
+    "afterbegin",
+    `<div class="card" data-genre="${song.genre}">
       <img src="${song.image}" />
       <h2>${song.name}</h2>
       <h3>${song.artist}</h3>
@@ -136,6 +136,7 @@ document.querySelector(".modebtn").addEventListener("click", function () {
   }
 });
 
+// song queue
 const queue = [];
 document.addEventListener("click", function (click) {
   if (click.target.classList.contains("button")) {
@@ -147,28 +148,40 @@ document.addEventListener("click", function (click) {
 
     if (song && !alreadyInQueue) {
       queue.push(song);
-      document
-        .querySelector(".songs")
-        .insertAdjacentHTML(
-          "afterbegin",
-          `<p>${song.name} - ${song.length} Minutes</p>`
-        );
+      document.querySelector(".songs").insertAdjacentHTML(
+        "afterbegin",
+        `
+        <div class="queue-item">
+          <img src="${song.image}" alt="${song.name}">
+          <div class="queue-info">
+            <h4>${song.name}</h4>
+            <p>${song.artist}</p>
+            <span>${song.length}</span>
+          </div>
+        </div>
+        `
+      );
     }
   }
 });
 
+// open song playlist
 document.querySelector(".openbtn").addEventListener("click", function () {
   const panel = document.querySelector(".panel");
   panel.classList.toggle("open");
 });
 
-const filter = document.querySelectorAll(".filterbtn")
+// filter
+const filter = document.querySelectorAll(".filterbtn");
 filter.forEach((button) =>
   button.addEventListener("click", function (event) {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
       const songGenre = card.dataset.genre;
-      if (songGenre === event.target.textContent || event.target.textContent === "All") {
+      if (
+        songGenre === event.target.textContent ||
+        event.target.textContent === "All"
+      ) {
         card.style.display = "";
       } else {
         card.style.display = "none";
@@ -177,7 +190,8 @@ filter.forEach((button) =>
   })
 );
 
-document.querySelector(".addbtn").addEventListener("click", function() {
+// open add song panel
+document.querySelector(".addbtn").addEventListener("click", function () {
   const songadd = document.querySelector(".songadd");
   songadd.classList.toggle("open");
 });
@@ -189,6 +203,33 @@ imageUpload.addEventListener("input", function () {
   const imageUrl = imageUpload.value.trim();
 
   if (!imageUrl) return;
-
   imagePreview.style.backgroundImage = `url(${imageUrl})`;
+});
+
+// create song
+document.querySelector(".createsongbtn").addEventListener("click", function () {
+  const name = document.querySelector("#songName").value.trim();
+  const artist = document.querySelector("#artist").value.trim();
+  const length = document.querySelector("#length").value.trim();
+  const image = document.querySelector("#imageUpload").value.trim();
+
+  const newSong = {
+    name,
+    artist,
+    length,
+    image,
+    genre: "Custom",
+  };
+  songs.push(newSong);
+
+  document.querySelector(".songcontainer").insertAdjacentHTML(
+    "afterbegin",
+    `<div class="card" data-genre="${newSong.genre}">
+      <img src="${newSong.image}" />
+      <h2>${newSong.name}</h2>
+      <h3>${newSong.artist}</h3>
+      <p>Length: ${newSong.length}</p>
+      <button class="button" data-name="${newSong.name}">Add to Queue</button>
+    </div>`
+  );
 });
