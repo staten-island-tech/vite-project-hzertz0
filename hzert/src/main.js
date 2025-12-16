@@ -189,6 +189,5 @@ imageUpload.addEventListener("input", function () {
   const imageUrl = imageUpload.value.trim();
 
   if (!imageUrl) return;
-
   imagePreview.style.backgroundImage = `url(${imageUrl})`;
 });
